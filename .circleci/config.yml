@@ -13,7 +13,8 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - setup_remote_docker: version: 19.03.13
+      - setup_remote_docker: 
+          version: 19.03.13
       
       - run: docker run --rm --privileged -v "$(pwd)/android":/home/lineageos -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
 
