@@ -16,7 +16,7 @@ jobs:
     steps:
       - setup_remote_docker: 
           version: 19.03.13
-      - run: lsb_release -a
+      - run: uname -v
       - run: docker run --rm --privileged -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
 
 # Invoke jobs via workflows
