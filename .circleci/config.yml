@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: jfloff/lineageos 
-      - image: circleci/android 
+      - image: circleci/golang:1.15 
         user: root
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
