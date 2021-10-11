@@ -14,7 +14,9 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run: sudo docker run --rm --privileged -v /home/circleci:/home/lineageos -e GIT_USER_NAME=jfloff -e GIT_USER_EMAIL=jfloff@inesc-id.pt -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
+      - run: git config --global --add user.name jfloff
+      - run: git config --global --add user.email jfloff@inesc-id.pt
+      - run: sudo docker run --rm --privileged -v /home/circleci:/home/lineageos -e DEVICE_CODENAME=klte -ti jfloff/lineageos lineageos init build
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
